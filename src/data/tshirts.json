@@ -1,0 +1,757 @@
+[
+  {
+    "_id": {
+      "$oid": "68518731fee262f1bdbcada0"
+    },
+    "title": "Jockey 2718 Men's Super Combed Cotton Rich Graphic Printed Regular Fit Round Neck Half Sleeve T-Shirt",
+    "slug": "Jockey 2718 Men's Super Combed Cotton Rich Graphic Printed Regular Fit Round Neck Half Sleeve T-Shirt",
+    "size": ["XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL"],
+    "color": {
+      "XS": ["black", "white", "navy", "gray"],
+      "S": ["forestgreen", "lightblue", "beige", "purple", "yellow"],
+      "M": ["black", "white", "navy", "gray", "maroon", "olive", "forestgreen"],
+      "L": [
+        "black",
+        "white",
+        "navy",
+        "gray",
+        "red",
+        "royalblue",
+        "maroon",
+        "olive",
+        "forestgreen",
+        "lightblue",
+        "beige",
+        "purple",
+        "yellow"
+      ],
+      "XL": ["black", "purple", "yellow"],
+      "XXL": ["black"],
+      "3XL": ["black", "white", "navy", "red", "purple", "yellow"],
+      "4XL": ["black", "white"]
+    },
+    "price": 799,
+    "desc": "<ol class=\"desc\"><li>Style Number - 2718 | Super Combed Cotton Rich Fabric | Fabric Composition : Cotton and Polyester | Round Neck</li> <li>Graphic Print Design</li><li>Label Free for All Day Comfort</li><li>Gentle wash 40°C; Do not bleach; Do not wring; Line dry in shade; Medium iron; Do not dry clean; Wash inside out with like colours; Do not iron on label/print</li></ol>",
+    "category": "T-Shirt",
+    "img": "https://m.media-amazon.com/images/I/71KFYiBgKyL._SX679_.jpg",
+    "availableQty": {
+      "XS": {
+        "black": 10,
+        "white": 5,
+        "navy": 1,
+        "gray": 34
+      },
+      "S": {
+        "forestgreen": 12,
+        "lightblue": 34,
+        "beige": 23,
+        "purple": 1,
+        "yellow": 1
+      },
+      "M": {
+        "black": 10,
+        "white": 5,
+        "navy": 6,
+        "gray": 7,
+        "maroon": 8,
+        "olive": 0,
+        "forestgreen": 0
+      },
+      "L": {
+        "black": 10,
+        "white": 5,
+        "navy": 2,
+        "gray": 3,
+        "red": 50,
+        "royalblue": 0,
+        "maroon": 2,
+        "olive": 0,
+        "forestgreen":5,
+        "lightblue": 0,
+        "beige": 9,
+        "purple": 0,
+        "yellow": 10
+      },
+      "XL": {
+        "black": 10,
+        "purple": 1,
+        "yellow": 2
+      },
+      "XXL": {
+        "black": 10
+      },
+      "3XL": {
+        "black": 10,
+        "white": 5,
+        "navy": 0,
+        "red": 1,
+        "purple": 6,
+        "yellow": 0
+      },
+      "4XL": {
+        "black": 10,
+        "white": 5
+      }
+    },
+    "createdAt": {
+      "$date": "2025-06-17T15:18:09.869Z"
+    },
+    "updatedAt": {
+      "$date": "2025-06-18T03:36:38.828Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6852a9d8495f4f37a9f3a4a5"
+    },
+    "title": "Golf Flag Unisex T-Shirt, Red, 4XL",
+    "slug": "Golf Flag Unisex T-Shirt, Red, 4XL",
+    "desc": "<ol class=\"desc\"><li><span class=\"a-list-item a-size-base a-color-base\">ICONIC DESIGN: Embrace the essence of Americana with our Golf Flag T-Shirt, featuring a unique graphic of the US flag adorned with golf balls for stars and golf clubs as stripes. It's a striking homage to the love of golf intertwined with national pride.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">PREMIUM QUALITY: Crafted from a luxurious triblend fabric, this T-Shirt offers the perfect balance of comfort and durability. It's incredibly soft against the skin and retains its shape wash after wash.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">VERSATILE COMFORT: Whether you're enjoying leisure time off the course or making a statement in town, this T-Shirt promises 100% comfort and style. Its superior softness ensures a perfect fit every time.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">MAKE A STATEMENT: Stand out with our Golf Flag Unisex T-Shirt, symbolizing your passion for golf and pride in being American. Perfect for casual outings and showcasing your love for the game.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">EXPRESS YOUR PASSION: Let your T-Shirt do the talking and express your deep-rooted love for golf and country wherever you go.</span></li></ol>",
+    "img": "https://m.media-amazon.com/images/I/71pZSa+NKRL._AC_SX679_.jpg",
+    "category": "T-Shirt",
+    "size": ["XS", "S", "M", "L", "XL", "XXL"],
+    "color": {
+      "XS": [
+        "black",
+        "white",
+        "navy",
+        "gray",
+        "red",
+        "olive",
+        "forestgreen",
+        "lightblue",
+        "beige",
+        "purple",
+        "yellow"
+      ],
+      "S": ["black", "white", "navy", "gray", "red", "royalblue", "maroon"],
+      "M": ["black", "yellow"],
+      "L": ["black", "forestgreen", "lightblue", "beige", "purple", "yellow"],
+      "XL": ["black", "white", "navy"],
+      "XXL": [
+        "black",
+        "white",
+        "gray",
+        "red",
+        "maroon",
+        "olive",
+        "lightblue",
+        "beige",
+        "purple",
+        "yellow"
+      ]
+    },
+    "price": 2999,
+    "availableQty": {
+      "XS": {
+        "black": 10,
+        "white": 5,
+        "navy": 1,
+        "gray": 34,
+        "red": 1,
+        "royalblue": 1,
+        "maroon": 1,
+        "olive": 1,
+        "forestgreen": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "S": {
+        "black": 10,
+        "white": 5,
+        "navy": 6,
+        "gray": 7,
+        "red": 1,
+        "royalblue": 1,
+        "maroon": 1,
+        "olive": 1,
+        "forestgreen": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "M": {
+        "black": 10,
+        "yellow": 1
+      },
+      "L": {
+        "black": 10,
+        "forestgreen": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "XL": {
+        "black": 10,
+        "white": 5,
+        "navy": 1
+      },
+      "XXL": {
+        "black": 10,
+        "white": 5,
+        "gray": 1,
+        "red": 1,
+        "maroon": 1,
+        "olive": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6852a9d8495f4f37a9f3a4a6"
+    },
+    "title": "Champion Men's T-shirt, Cotton Midweight Men's Crewneck Tee,t-shirt for Men, Graphic Script",
+    "slug": "Champion Men's T-shirt, Cotton Midweight Men's Crewneck Tee,t-shirt for Men, Graphic Script",
+    "desc": "<ol class=\"desc\"><li><span class=\"a-list-item a-size-base a-color-base\">THE FIT - Standard-fit men's t-shirt.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">THE FEEL - Comfortable, 5.5 oz cotton or cotton blend that's extra soft.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">THE GRAPHIC - Classic script sits on the chest of this men's tee.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">SPOT THE C - Iconic C logo patch hits at the sleeve.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">EASY CARE - Machine wash this men's t-shirt on cold with like colors for easy care that reduces energy use.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">Note: C logo patch color may vary from image.</span></li></ol>",
+    "img": "https://m.media-amazon.com/images/I/71-aO14KVkL._AC_SX679_.jpg",
+    "category": "T-Shirt",
+    "size": ["S", "M", "L", "XL", "XXL"],
+    "color": {
+      "S": ["black", "white", "navy", "gray", "red", "purple", "yellow"],
+      "M": ["forestgreen", "lightblue", "beige", "purple", "yellow"],
+      "L": [
+        "black",
+        "white",
+        "navy",
+        "gray",
+        "red",
+        "royalblue",
+        "maroon",
+        "olive",
+        "forestgreen"
+      ],
+      "XL": [
+        "black",
+        "white",
+        "navy",
+        "gray",
+        "lightblue",
+        "beige",
+        "purple",
+        "yellow"
+      ],
+      "XXL": ["black", "white", "navy", "gray", "yellow"]
+    },
+    "price": 5999,
+    "availableQty": {
+      "S": {
+        "black": 10,
+        "white": 5,
+        "navy": 1,
+        "gray": 34,
+        "red": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "M": {
+        "forestgreen": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "L": {
+        "black": 10,
+        "white": 5,
+        "navy": 6,
+        "gray": 7,
+        "red": 1,
+        "royalblue": 1,
+        "maroon": 1,
+        "olive": 1,
+        "forestgreen": 1
+      },
+      "XL": {
+        "black": 10,
+        "white": 5,
+        "navy": 2,
+        "gray": 3,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "XXL": {
+        "black": 10,
+        "white": 5,
+        "navy": 1,
+        "gray": 1,
+        "yellow": 1
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6852a9d8495f4f37a9f3a4a7"
+    },
+    "title": "Costa Del Mar Prado Tee",
+    "slug": "Costa Del Mar Prado Tee",
+    "desc": "<ol class=\"desc\"><li><span class=\"a-list-item a-size-base a-color-base\">PERFECT FIT: The Costa Del Mar Prado short sleeve t-shirt is a regular fit men's cut shirt with a taped neck and shoulder seams.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">Machine wash cold, inside out, with like colors. Tumble dry low. Iron inside out on low setting. Do not use bleach. Do not dry clean.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">VISIT THE COSTA DEL MAR BRAND SHOP: Click on the Costa Del Mar link above the product title to shop the entire Costa Del Mar apparel assortment.</span></li></ol>",
+    "img": "https://m.media-amazon.com/images/I/61g-yqJrR3L._AC_SX679_.jpg",
+    "category": "T-Shirt",
+    "size": ["XS", "S", "L", "XL", "XXL"],
+    "color": {
+      "XS": ["black", "white", "navy", "gray", "red", "royalblue"],
+      "S": ["forestgreen", "lightblue", "beige", "purple", "yellow"],
+      "L": ["black", "white", "navy", "gray"],
+      "XL": [
+        "black",
+        "white",
+        "forestgreen",
+        "lightblue",
+        "beige",
+        "purple",
+        "yellow"
+      ],
+      "XXL": ["black", "yellow"]
+    },
+    "price": 11999,
+    "availableQty": {
+      "XS": {
+        "black": 10,
+        "white": 5,
+        "navy": 1,
+        "gray": 34,
+        "red": 1,
+        "royalblue": 1
+      },
+      "S": {
+        "forestgreen": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "L": {
+        "black": 10,
+        "white": 5,
+        "navy": 6,
+        "gray": 7
+      },
+      "XL": {
+        "black": 10,
+        "white": 5,
+        "forestgreen": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "XXL": {
+        "black": 10,
+        "yellow": 1
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6852a9d8495f4f37a9f3a4a8"
+    },
+    "title": "Liberty Flames Mom Proud Parent Short Sleeve T-Shirt",
+    "slug": "Liberty Flames Mom Proud Parent Short Sleeve T-Shirt",
+    "desc": "<ol class=\"desc\"><li><span class=\"a-list-item a-size-base a-color-base\">Liberty Flames Mom shirt design makes a great gift for any Flames parent</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">Bright Liberty logos and colors for a truly vibrant look</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">Short sleeve design is perfect for everyday Liberty fan gear</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">High quality, full front print displaying a unique and stylish design and look</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">Officially Licensed Product</span></li></ol>",
+    "img": "https://m.media-amazon.com/images/I/61GrwmTpdPL._AC_SX679_.jpg",
+    "category": "T-Shirt",
+    "size": ["XS", "L", "XL", "XXL", "4XL"],
+    "color": {
+      "XS": [
+        "olive",
+        "forestgreen",
+        "lightblue",
+        "beige",
+        "purple",
+        "yellow"
+      ],
+      "L": [
+        "black",
+        "white",
+        "navy",
+        "gray",
+        "yellow"
+      ],
+      "XL": [
+        "purple",
+        "yellow"
+      ],
+      "XXL": [
+        "navy"
+      ],
+      "4XL": [
+        "black",
+        "white",
+        "navy",
+        "red",
+        "purple",
+        "yellow"
+      ]
+    },
+    "price": 1999,
+    "availableQty": {
+      "XS": {
+        "olive": 1,
+        "forestgreen": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "L": {
+        "black": 10,
+        "white": 5,
+        "navy": 6,
+        "gray": 7,
+        "yellow": 1
+      },
+      "XL": {
+        "purple": 1,
+        "yellow": 1
+      },
+      "XXL": {
+        "navy": 1
+      },
+      "4XL": {
+        "black": 10,
+        "white": 5,
+        "navy": 1,
+        "red": 1,
+        "purple": 1,
+        "yellow": 1
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6852a9d8495f4f37a9f3a4a9"
+    },
+    "title": "Palmyth Men's Fishing Shirt Short Sleeve Sun Protection UV UPF 50+ SPF T-Shirt",
+    "slug": "Palmyth Men's Fishing Shirt Short Sleeve Sun Protection UV UPF 50+ SPF T-Shirt",
+    "desc": "<ol class=\"desc\"><li><span class=\"a-list-item a-size-base a-color-base\">Stylish Fish Print: An elegant unique fish artwork adds style and character to this fishing shirts. The stylish print and graphics on this cool shirts to make you outstanding.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">Sun Protection: Myth-Cool fabric featured with UPF 50+ protects your skin from the sun's harmful rays.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">Quick Dry: Myth-Cool fabric with outstanding wicking performance to transport the sweat to drier areas away from your skin to the exterior of the fishing shirts. Keep you dry on the water, properties to minimize odor.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">Comfort Fit: Myth-Cool stretch fabric with loose cut to ensure fit more tension. The roomy sleeves to allow comfort without limiting movement when casting. Lightweight and tag free collar without friction for skin. Machine washable.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">Multipurpose Fishing Shirts: Great choice which suit for daily wear, fly fishing, lure fishing, kayak fishing, great for inshore, offshore, fresh water and salt water.</span></li></ol>",
+    "img": "https://m.media-amazon.com/images/I/61o3NIqYT7L._AC_SX679_.jpg",
+    "category": "T-Shirt",
+    "size": ["XS", "S", "M", "L", "XL", "XXL", "3XL"],
+    "color": {
+      "XS": ["black", "white", "navy", "gray"],
+      "S": ["forestgreen", "lightblue", "beige", "purple", "yellow"],
+      "M": ["black", "white", "navy", "gray", "maroon", "olive", "forestgreen"],
+      "L": [
+        "black",
+        "white",
+        "navy",
+        "gray",
+        "red",
+        "royalblue",
+        "maroon",
+        "olive",
+        "forestgreen",
+        "lightblue",
+        "beige",
+        "purple",
+        "yellow"
+      ],
+      "XL": ["black", "purple", "yellow"],
+      "XXL": ["black"],
+      "3XL": ["black", "white", "navy", "red", "purple", "yellow"]
+    },
+    "price": 4999,
+    "availableQty": {
+      "XS": {
+        "black": 10,
+        "white": 5,
+        "navy": 1,
+        "gray": 34
+      },
+      "S": {
+        "forestgreen": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "M": {
+        "black": 10,
+        "white": 5,
+        "navy": 6,
+        "gray": 7,
+        "maroon": 1,
+        "olive": 1,
+        "forestgreen": 1
+      },
+      "L": {
+        "black": 10,
+        "white": 5,
+        "navy": 6,
+        "gray": 7,
+        "red": 1,
+        "royalblue": 1,
+        "maroon": 1,
+        "olive": 1,
+        "forestgreen": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "XL": {
+        "black": 10,
+        "purple": 1,
+        "yellow": 1
+      },
+      "XXL": {
+        "black": 10
+      },
+      "3XL": {
+        "black": 10,
+        "white": 5,
+        "navy": 1,
+        "red": 1,
+        "purple": 1,
+        "yellow": 1
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6852a9d8495f4f37a9f3a4aa"
+    },
+    "title": "Champion Men's Classic T Shirt, Triangle Graphic",
+    "slug": "Champion Men's Classic T Shirt, Triangle Graphic",
+    "desc": "<ol class=\"desc\"><li><span class=\"a-list-item a-size-base a-color-base\">THE FIT - This is a standard-fit men's t-shirt.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">THE FEEL - Crafted with a midweight 5.5 oz. cotton. Back neck tape covers seams for itch-free comfort.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">THE LOOK - Classic men’s T-shirt silhouette with a sturdy bound neck collar and double-needle construction.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">THE GRAPHIC - A bold triangle C logo with a classic script logo is at the front of this men's tee.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">SPOT THE C - Find the iconic C logo at the sleeve.</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">EASY CARE - Machine wash this men's T-shirt on cold with like colors for easy care that reduces energy use.</span></li></ol>",
+    "img": "https://m.media-amazon.com/images/I/81tmzF8sZ3L._AC_SY879_.jpg",
+    "category": "T-Shirt",
+    "size": ["XS", "S", "M", "3XL", "4XL"],
+    "color": {
+      "XS": [
+        "black",
+        "white",
+        "navy",
+        "gray",
+        "red",
+        "royalblue",
+        "maroon",
+        "olive",
+        "forestgreen",
+        "lightblue",
+        "beige",
+        "purple",
+        "yellow"
+      ],
+      "S": [
+        "black",
+        "white",
+        "navy",
+        "gray"
+      ],
+      "M": [
+        "black",
+        "white",
+        "navy",
+        "gray",
+        "red",
+        "royalblue",
+        "maroon",
+        "olive",
+        "forestgreen",
+        "lightblue",
+        "beige",
+        "purple",
+        "yellow"
+      ],
+      "3XL": ["black", "white", "navy", "red", "purple", "yellow"],
+      "4XL": ["black", "white"]
+    },
+    "price": 999,
+    "availableQty": {
+      "XS": {
+        "black": 10,
+        "white": 5,
+        "navy": 1,
+        "gray": 34,
+        "red": 1,
+        "royalblue": 1,
+        "maroon": 1,
+        "olive": 1,
+        "forestgreen": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "S": {
+        "black": 10,
+        "white": 5,
+        "navy": 6,
+        "gray": 7
+      },
+      "M": {
+        "black": 10,
+        "white": 5,
+        "navy": 6,
+        "gray": 7,
+        "red": 1,
+        "royalblue": 1,
+        "maroon": 1,
+        "olive": 1,
+        "forestgreen": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "3XL": {
+        "black": 10,
+        "white": 5,
+        "navy": 1,
+        "red": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "4XL": {
+        "black": 10,
+        "white": 5
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6852a9d8495f4f37a9f3a4ab"
+    },
+    "title": "Nautica Men's Short Sleeve 100% Cotton Nautical Series Graphic Tee",
+    "slug": "Nautica Men's Short Sleeve 100% Cotton Nautical Series Graphic Tee",
+    "desc": "<ol class=\"desc\"><ul class=\"a-unordered-list a-vertical a-spacing-small\">  <li><span class=\"a-list-item a-size-base a-color-base\">Crew-neck t-shirt with graphics on front and sleeve and comfortable cotton construction</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">Easy pullover styling with a casual crew-neckline</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">True to size</span></li>  <li><span class=\"a-list-item a-size-base a-color-base\">Ensures a flattering fit with excellent wearing comfort</span></li>  </ul></ol>",
+    "img": "https://m.media-amazon.com/images/I/815RyowHyAL._AC_SX679_.jpg",
+    "category": "T-Shirt",
+    "size": ["XS", "S", "M", "L", "XL", "XXL", "3XL", "4XL"],
+    "color": {
+      "XS": ["black", "white", "navy", "gray"],
+      "S": [
+        "black",
+        "white",
+        "navy",
+        "gray",
+        "red",
+        "royalblue",
+        "maroon",
+        "olive",
+        "forestgreen",
+        "lightblue",
+        "beige",
+        "purple",
+        "yellow"
+      ],
+      "M": [
+        "black",
+        "white",
+        "navy",
+        "gray",
+        "red",
+        "lightblue",
+        "beige",
+        "purple",
+        "yellow"
+      ],
+      "L": [
+        "black",
+        "white",
+        "navy",
+        "gray",
+        "beige",
+        "purple",
+        "yellow"
+      ],
+      "XL": [
+        "yellow"
+      ],
+      "XXL": [
+        "black",
+        "white",
+        "navy",
+        "gray",
+        "red",
+        "royalblue",
+        "yellow"
+      ],
+      "3XL": [
+        "black",
+        "beige",
+        "purple",
+        "yellow"
+      ],
+      "4XL": ["black", "white"]
+    },
+    "price": 3999,
+    "availableQty": {
+      "XS": {
+        "black": 10,
+        "white": 5,
+        "navy": 1,
+        "gray": 34
+      },
+      "S": {
+        "black": 10,
+        "white": 5,
+        "navy": 6,
+        "gray": 7,
+        "red": 1,
+        "royalblue": 1,
+        "maroon": 1,
+        "olive": 1,
+        "forestgreen": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "M": {
+        "black": 10,
+        "white": 5,
+        "navy": 6,
+        "gray": 7,
+        "red": 1,
+        "lightblue": 1,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "L": {
+        "black": 10,
+        "white": 5,
+        "navy": 6,
+        "gray": 7,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "XL": {
+        "yellow": 1
+      },
+      "XXL": {
+        "black": 10,
+        "white": 5,
+        "navy": 1,
+        "gray": 1,
+        "red": 1,
+        "royalblue": 1,
+        "yellow": 1
+      },
+      "3XL": {
+        "black": 10,
+        "beige": 1,
+        "purple": 1,
+        "yellow": 1
+      },
+      "4XL": {
+        "black": 10,
+        "white": 5
+      }
+    }
+  }
+]

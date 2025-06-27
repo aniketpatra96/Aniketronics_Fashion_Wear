@@ -1,0 +1,66 @@
+[
+  {
+    "userId": "6858052cf107cbdb5252deda",
+    "products": [
+      {
+        "productId": "68518731fee262f1bdbcada0",
+        "title": "Jockey 2718 Men's Super Combed Cotton Rich Graphic Printed Regular Fit Round Neck Half Sleeve T-Shirt",
+        "quantity": 1,
+        "category": "T-Shirt",
+        "price": 799,
+        "color": "purple",
+        "size": "XL",
+        "img": "https://m.media-amazon.com/images/I/71KFYiBgKyL._SX679_.jpg"
+      },
+      {
+        "productId": "685654d679e2e2e3272ec14f",
+        "title": "Trillion Regular Fit Printed Hoodie for Men | Sweatshirt for Men",
+        "quantity": 2,
+        "category": "Hoody",
+        "price": 597,
+        "color": "white",
+        "size": "L",
+        "img": "https://m.media-amazon.com/images/I/41oxHlqVLXL.jpg"
+      }
+    ],
+    "address": "Plot no. 1422/4337 Bhoi Sahi Patia Bhubaneswar 751031",
+    "orderTotal": 1993,
+    "status": "pending",
+    "orderDate": "2025-06-24T10:35:12.452Z",
+    "createdAt": "2025-06-24T10:35:12.452Z",
+    "updatedAt": "2025-06-24T10:35:12.452Z",
+    "__v": 0
+  },
+  {
+    "userId": "6858052cf107cbdb5252deda",
+    "products": [
+      {
+        "productId": "6856ab2579e2e2e3272ec165",
+        "title": "CodersParadise Pack Of 50 Gaming Vinyl Stickers For Laptop, Journal, Bike Helmet, Gaming Console, Guitar, Mobile Case - Aesthetic Waterproof Gamer Sticker - 3 Inches For Metal, Plastic, Wooden Surface",
+        "quantity": 10,
+        "category": "Sticker",
+        "price": 349,
+        "color": null,
+        "size": null,
+        "img": "https://m.media-amazon.com/images/I/61bOwfqqfAL._SX300_SY300_QL70_FMwebp_.jpg"
+      },
+      {
+        "productId": "6856db3f79e2e2e3272ec184",
+        "title": "The Earth Store Grey Stripe Coffee Mug - 420ml Each Capacity, Microwave and Dishwasher Safe, Ceramic Coffee Mug for Every Occasion (Set of 2)",
+        "quantity": 5,
+        "category": "Hoody",
+        "price": 299,
+        "color": null,
+        "size": null,
+        "img": "https://m.media-amazon.com/images/I/41S1p2y50ZL._SX300_SY300_QL70_FMwebp_.jpg"
+      }
+    ],
+    "address": "Plot no. 1422/4337 Bhoi Sahi Patia Bhubaneswar 751031",
+    "orderTotal": 4985,
+    "status": "pending",
+    "orderDate": "2025-06-23T11:45:12.452Z",
+    "createdAt": "2025-06-23T11:45:12.452Z",
+    "updatedAt": "2025-06-23T11:45:12.452Z",
+    "__v": 0
+  }
+]

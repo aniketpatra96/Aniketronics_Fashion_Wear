@@ -42,7 +42,7 @@ export default function Home() {
             </h1>
             <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">
               Wear with passion, wear with pride. Aniketronics is not just a
-              brand; it's a lifestyle. Our collection is designed to inspire and
+              brand; it&apos;s a lifestyle. Our collection is designed to inspire and
               empower you to express your individuality through fashion.
             </p>
           </div>

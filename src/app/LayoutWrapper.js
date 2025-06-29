@@ -30,7 +30,7 @@ export default function LayoutWrapper({ children }) {
     if (protectedPaths.includes(pathname) && !token) {
       router.push("/login");
     }
-  }, [pathname]);
+  }, [pathname, protectedPaths, router]);
 
   useEffect(() => {
     setIsSecretPage(pathname === "/secret");

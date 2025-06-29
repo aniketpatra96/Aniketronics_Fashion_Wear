@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/contexts/CartContext";
@@ -15,11 +15,12 @@ import { IoTrashBinSharp } from "react-icons/io5";
 import { MdAccountCircle } from "react-icons/md";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/contexts/UserContext";
+import userService from "@/services/UserService";
 
 const Navbar = () => {
   const { cart, addToCart, removeFromCart, clearCart, subTotal } = useCart();
   const ref = useRef();
-  const { isLoggedIn, logout } = useAuth();
+  const { isLoggedIn, logout, user, setUser } = useAuth();
   const toggleCart = () => {
     if (ref.current.classList.contains("translate-x-full")) {
       ref.current.classList.remove("translate-x-full");
@@ -34,6 +35,19 @@ const Navbar = () => {
   const toggleDropdown = () => {
     setDropdown(!dropdown);
   };
+  useEffect(() => {
+    if(!user?._id) return;
+    (async () => {
+      try {
+        const response = await userService.getUser(user._id);
+        if(response.status === 200) {
+          setUser(response.user);
+        }
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  },[user?._id]);
   return (
     <div
       className={`flex flex-col md:flex-row md:justify-start justify-center items-center mb-1  shadow-md bg-white-200 top-0 ${
@@ -124,9 +138,16 @@ const Navbar = () => {
             </button>
           </Link>
         ) : (
-          <MdAccountCircle
-            onClick={() => setDropdown((prev) => !prev)}
-            className="text-2xl md:text-4xl mx-2"
+          <Image
+            onClick={toggleDropdown}
+            className="w-10 h-10 rounded-full mx-2"
+            src={
+              user?.profilePicture ||
+              "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg"
+            }
+            alt="Rounded avatar"
+            width={10}
+            height={10}
           />
         )}
         <AiOutlineShoppingCart

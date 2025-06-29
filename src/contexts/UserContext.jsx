@@ -46,7 +46,7 @@ export default function UserProvider(props) {
   };
 
   return (
-    <UserContext.Provider value={{ token, isLoggedIn, login, logout, user }}>
+    <UserContext.Provider value={{ token, isLoggedIn, login, logout, user, setUser }}>
       {props.children}
     </UserContext.Provider>
   );

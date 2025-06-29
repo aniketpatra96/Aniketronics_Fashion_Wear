@@ -19,7 +19,7 @@ export default function LayoutWrapper({ children }) {
     "/myaccount",
     "/order",
     "/orders",
-    "/orderdetails"
+    "/orderdetails",
   ];
 
   useEffect(() => {
@@ -38,7 +38,6 @@ export default function LayoutWrapper({ children }) {
   }, [pathname]);
 
   if (!hasMounted) return null;
-
   return isSecretPage ? (
     children
   ) : (

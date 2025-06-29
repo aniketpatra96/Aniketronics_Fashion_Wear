@@ -18,6 +18,7 @@
     "edgestore",
     "fetchorder",
     "fetchorderitem",
+    "Forgotservice",
     "getorders",
     "getproduct",
     "getproducts",
@@ -62,6 +63,7 @@
     "updateproducts",
     "updatestock",
     "Uttar",
-    "Uttarakhand"
+    "Uttarakhand",
+    "validateuser"
   ]
 }

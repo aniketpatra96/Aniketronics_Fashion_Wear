@@ -134,6 +134,17 @@ const Secret = () => {
                 preload="auto"
               />
             </div>
+            <div>
+              <Video
+                className="love"
+                src="/assets/videos/love_hai_mushkil_4.mp4"
+                width={1280}
+                height={720}
+                autoPlay={false}
+                loop={false}
+                preload="auto"
+              />
+            </div>
           </Carousel>
         </>
       )}

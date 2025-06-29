@@ -32,8 +32,8 @@ const AboutUs = () => {
             any app. I do freelancing fro you. You can reach out to me by my
             email aniketpatra96@gmail.com.
           </p>
-          <div className="flex w-full justify-center items-end">
-            <div className="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
+          <div className="flex flex-col md:flex-row w-full justify-center items-end">
+            <div className="relative md:mr-4 w-full xl:w-1/2 lg:w-2/4 md:w-full text-left">
               <label
                 htmlFor="hero-field"
                 className="leading-7 text-sm text-gray-600"
@@ -49,7 +49,7 @@ const AboutUs = () => {
             </div>
             <button
               onClick={handleChange}
-              className="inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg"
+              className="md:inline-flex text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded text-lg mt-4 md:mt-0 w-full md:w-auto"
             >
               Get In Touch
             </button>

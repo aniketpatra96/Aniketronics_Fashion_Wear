@@ -13,27 +13,24 @@ export default function LayoutWrapper({ children }) {
   const [progress, setProgress] = useState(0);
   const [hasMounted, setHasMounted] = useState(false);
   const [isSecretPage, setIsSecretPage] = useState(false);
-  const protectedPaths = useMemo(
-    () => [
-      "/login",
-      "/signup",
-      "/myaccount",
-      "/order",
-      "/orders",
-      "/orderdetails",
-    ],
+  const protectedPaths1 = useMemo(
+    () => ["/myaccount", "/order", "/orders", "/orderdetails", "/payment"],
     []
   );
+  const protectedPaths2 = useMemo(() => ["/signup", "/login"], []);
 
   useEffect(() => {
     setHasMounted(true);
 
     const token = localStorage.getItem("token");
 
-    if (protectedPaths.includes(pathname) && !token) {
+    if (protectedPaths1.includes(pathname) && token === null) {
       router.push("/login");
     }
-  }, [pathname, protectedPaths, router]);
+    if (protectedPaths2.includes(pathname) && token !== null) {
+      router.push("/");
+    }
+  }, [pathname, protectedPaths1, protectedPaths2, router]);
 
   useEffect(() => {
     setIsSecretPage(pathname === "/secret");

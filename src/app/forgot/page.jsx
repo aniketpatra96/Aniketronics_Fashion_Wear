@@ -15,30 +15,59 @@ const ForgotPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   useEffect(() => {
     if (localStorage.getItem("token")) {
       window.location.href = "/";
+      return;
     }
-  }, []);
+    if (token) {
+      (async () => {
+        try {
+          const response = await forgotService.validateToken(token);
+          if (response.status === 200 && response.success) {
+            toast.success("Token Validated Successfully !!", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+              transition: Bounce,
+            });
+            setEmail(response.email || "");
+          } else {
+            window.location.href = "/forgot";
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      })();
+    }
+  }, [token]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const response = await userService.validateUser({ email });
     if (response.status === 200) {
-      const data = { email, sendEmail: true };
-      const response = await forgotService.sendResetEmail(data);
-      setEmail("");
-      response?.message &&
-        toast.success(response?.message || "success", {
-          position: "top-center",
-          autoClose: 5000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "colored",
-          transition: Bounce,
-        });
+      const data = { email };
+      const res = await forgotService.sendResetEmail(data);
+      if (res.status === 200) {
+        res.message &&
+          toast.success(res?.message || "success", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+          });
+        setEmail("");
+      }
     } else if (response.status === 404) {
       response?.message &&
         toast.error(response?.message || "failure", {
@@ -67,10 +96,43 @@ const ForgotPassword = () => {
         });
     }
   };
-  const handleReset = () => {
+  const handleReset = async (e) => {
+    e.preventDefault();
     try {
-      if(password === confirmPassword) {
-        
+      if (password === confirmPassword) {
+        const data = { email, password };
+        const response1 = await forgotService.resetPassword(data);
+        if (response1.status === 200) {
+          const response2 = await forgotService.deleteToken(email);
+          if (response2.status === 200 && response2.success) {
+            toast.success("Password has been Reset Successfully !", {
+              position: "top-center",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "colored",
+              transition: Bounce,
+            });
+            setPassword("");
+            setConfirmPassword("");
+            setTimeout(() => (window.location.href = "/login"), 5000);
+          }
+        } else {
+          toast.error("Unable to reset your Password !", {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+          });
+        }
       }
     } catch (error) {
       console.error(error);

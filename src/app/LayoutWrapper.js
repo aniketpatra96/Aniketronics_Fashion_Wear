@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import CartContext from "@/contexts/CartContext";
 import UserContext from "@/contexts/UserContext";
 import LoadingBar from "react-top-loading-bar";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 export default function LayoutWrapper({ children }) {
   const pathname = usePathname();
@@ -13,14 +13,17 @@ export default function LayoutWrapper({ children }) {
   const [progress, setProgress] = useState(0);
   const [hasMounted, setHasMounted] = useState(false);
   const [isSecretPage, setIsSecretPage] = useState(false);
-  const protectedPaths = [
-    "/login",
-    "/signup",
-    "/myaccount",
-    "/order",
-    "/orders",
-    "/orderdetails",
-  ];
+  const protectedPaths = useMemo(
+    () => [
+      "/login",
+      "/signup",
+      "/myaccount",
+      "/order",
+      "/orders",
+      "/orderdetails",
+    ],
+    []
+  );
 
   useEffect(() => {
     setHasMounted(true);

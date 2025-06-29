@@ -10,9 +10,8 @@ import { useAuth } from "@/contexts/UserContext";
 import orderService from "@/services/OrderService";
 import productService from "@/services/ProductService";
 
-const toOrder = JSON.parse(localStorage.getItem("order")) || null;
-
 const Payment = () => {
+  const [toOrder,setToOrder] = useState(null);
   const { cart, subTotal, clearCart } = useCart();
   const { user } = useAuth();
   const [total, setTotal] = useState(0);
@@ -21,6 +20,9 @@ const Payment = () => {
   const [userId, setUserId] = useState(null);
   const datepickerEl = useRef();
   const cardInputRef = useRef();
+  useEffect(() => {
+    setToOrder(JSON.parse(localStorage.getItem("order")));
+  }, []);
   useEffect(() => {
     if (datepickerEl.current) {
       new Datepicker(datepickerEl.current, {

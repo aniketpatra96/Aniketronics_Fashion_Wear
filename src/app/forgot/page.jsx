@@ -5,6 +5,8 @@ import { toast, Bounce } from "react-toastify";
 import userService from "@/services/UserService";
 import { useSearchParams } from "next/navigation";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { RxCross1 } from "react-icons/rx";
+import { SiTicktick } from "react-icons/si";
 import forgotService from "@/services/ForgotService";
 
 const ForgotPassword = () => {
@@ -15,7 +17,33 @@ const ForgotPassword = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
+  const [passwordTouched, setPasswordTouched] = useState(null);
+  const [passwordConstraints, setPasswordConstraints] = useState({
+    minLength: false,
+    uppercase: false,
+    specialChar: false,
+  });
+  const [passwordMatch, setPasswordMatch] = useState(false);
+  const handleConfirmPassword = (e) => {
+    const value = e.target.value;
+    setConfirmPassword(value);
+    setPasswordMatch((prev) => {
+      if (password === "") return false;
+      else return value === password;
+    });
+  };
+  const handlePassword = (e) => {
+    const value = e.target.value;
+    setPasswordTouched(true);
+    const updatedConstraints = {
+      minLength: value.length >= 8,
+      uppercase: /[A-Z]/.test(value),
+      specialChar: /[@#$%^&!]/.test(value),
+    };
+    setPasswordConstraints(updatedConstraints);
+    setPassword(value);
+    setPasswordMatch(confirmPassword === value);
+  };
   useEffect(() => {
     if (localStorage.getItem("token")) {
       window.location.href = "/";
@@ -99,7 +127,10 @@ const ForgotPassword = () => {
   const handleReset = async (e) => {
     e.preventDefault();
     try {
-      if (password === confirmPassword) {
+      if (
+        password === confirmPassword &&
+        Object.values(passwordConstraints).every((value) => value === true)
+      ) {
         const data = { email, password };
         const response1 = await forgotService.resetPassword(data);
         if (response1.status === 200) {
@@ -133,6 +164,25 @@ const ForgotPassword = () => {
             transition: Bounce,
           });
         }
+      } else {
+        toast.error("Fulfill all Password Credentials !", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Bounce,
+        });
+        setPasswordTouched(true);
+        setPasswordConstraints({
+          minLength: password.length >= 8,
+          uppercase: /[A-Z]/.test(password),
+          specialChar: /[@#$%^&!]/.test(password),
+        });
+        setPasswordMatch(confirmPassword === password);
       }
     } catch (error) {
       console.error(error);
@@ -170,7 +220,7 @@ const ForgotPassword = () => {
                       className="w-full text-slate-900 text-sm border border-slate-300 px-4 py-3 pr-8 rounded-md outline-blue-600"
                       placeholder="Enter password"
                       value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      onChange={handlePassword}
                     />
                     {showPassword ? (
                       <FaEyeSlash
@@ -200,7 +250,7 @@ const ForgotPassword = () => {
                       className="w-full text-slate-900 text-sm border border-slate-300 px-4 py-3 pr-8 rounded-md outline-blue-600"
                       placeholder="Enter password"
                       value={confirmPassword}
-                      onChange={(e) => setConfirmPassword(e.target.value)}
+                      onChange={handleConfirmPassword}
                     />
                     {showConfirmPassword ? (
                       <FaEyeSlash
@@ -225,17 +275,76 @@ const ForgotPassword = () => {
                   </button>
                 </div>
               </form>
-              {password !== confirmPassword ? (
-                <span className="text-red-600 flex items-center justify-center mt-2">
-                  Password and confirm Password don't match
-                </span>
-              ) : (
-                password && (
-                  <span className="text-green-600 flex items-center justify-center mt-2">
-                    Password and confirm Password matched
-                  </span>
-                )
-              )}
+              <h6>Password Constraints</h6>
+              <div className="flex items-center">
+                <ul className="list-none">
+                  <li
+                    className={`flex items-center gap-2 ${
+                      passwordTouched === null
+                        ? ""
+                        : passwordConstraints.minLength
+                        ? "text-green-600"
+                        : "text-red-600"
+                    }`}
+                  >
+                    Password must be at least 8 characters
+                    {passwordTouched !== null &&
+                      (passwordConstraints.minLength ? (
+                        <SiTicktick />
+                      ) : (
+                        <RxCross1 />
+                      ))}
+                  </li>
+                  <li
+                    className={`flex items-center gap-2 ${
+                      passwordTouched === null
+                        ? ""
+                        : passwordConstraints.uppercase
+                        ? "text-green-600"
+                        : "text-red-600"
+                    }`}
+                  >
+                    Password must contain 1 Uppercase letter
+                    {passwordTouched !== null &&
+                      (passwordConstraints.uppercase ? (
+                        <SiTicktick />
+                      ) : (
+                        <RxCross1 />
+                      ))}
+                  </li>
+                  <li
+                    className={`flex items-center gap-2 ${
+                      passwordTouched === null
+                        ? ""
+                        : passwordConstraints.specialChar
+                        ? "text-green-600"
+                        : "text-red-600"
+                    }`}
+                  >
+                    Password must contain 1 Special character
+                    {passwordTouched !== null &&
+                      (passwordConstraints.specialChar ? (
+                        <SiTicktick />
+                      ) : (
+                        <RxCross1 />
+                      ))}
+                  </li>
+                  <li
+                    className={`flex items-center gap-2 ${
+                      passwordTouched === null
+                        ? ""
+                        : passwordMatch
+                        ? "text-green-600"
+                        : "text-red-600"
+                    }`}
+                  >
+                    Password and confirm password must match
+                    {passwordTouched !== null &&
+                      (passwordMatch ? <SiTicktick /> : <RxCross1 />)}
+                  </li>
+                  <li>Note:- Special characters allowed are @#$%^&!</li>
+                </ul>
+              </div>
             </div>
           ) : (
             <div className="p-6 sm:p-8 rounded-2xl bg-white border border-gray-200 shadow-sm">

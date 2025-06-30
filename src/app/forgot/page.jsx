@@ -81,8 +81,8 @@ const ForgotPassword = () => {
     if (response.status === 200) {
       const data = { email };
       const res = await forgotService.sendResetEmail(data);
-      if (res.status === 200) {
-        res.message &&
+      if (res.status === 200) {        
+        await res.message &&
           toast.success(res?.message || "success", {
             position: "top-center",
             autoClose: 5000,

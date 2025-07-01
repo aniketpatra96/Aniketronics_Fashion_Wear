@@ -52,7 +52,8 @@ export async function POST(request, response) {
     });
     return Response.json({
       success: true,
-      message: "Password Reset Instructions have been sent to your registered Email Id",
+      message:
+        "Password Reset Instructions have been sent to your registered Email Id",
     });
   } catch (e) {
     console.error(e);
@@ -69,7 +70,11 @@ const handler = async (request, response) => {
     const token = searchParams.get("token");
     const forgot = await Forgot.findOne({ token: token });
     if (forgot) {
-      return Response.json({ success: true, email: forgot.email });
+      return Response.json({
+        success: true,
+        email: forgot.email,
+        createdAt: forgot.createdAt,
+      });
     } else {
       return Response.json({ success: false });
     }

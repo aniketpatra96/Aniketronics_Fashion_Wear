@@ -23,6 +23,12 @@ const ForgotPassword = () => {
     uppercase: false,
     specialChar: false,
   });
+  const validateTokenExpiry = (createdAt) => {
+    const createdTime = new Date(createdAt).getTime();
+    const currentTime = Date.now();
+    const oneHourInMs = 60 * 60 * 1000;
+    return currentTime - createdTime <= oneHourInMs;
+  };
   const [passwordMatch, setPasswordMatch] = useState(false);
   const handleConfirmPassword = (e) => {
     const value = e.target.value;
@@ -54,18 +60,39 @@ const ForgotPassword = () => {
         try {
           const response = await forgotService.validateToken(token);
           if (response.status === 200 && response.success) {
-            toast.success("Token Validated Successfully !!", {
-              position: "top-center",
-              autoClose: 5000,
-              hideProgressBar: false,
-              closeOnClick: true,
-              pauseOnHover: true,
-              draggable: true,
-              progress: undefined,
-              theme: "colored",
-              transition: Bounce,
-            });
-            setEmail(response.email || "");
+            if (
+              response.createdAt &&
+              !validateTokenExpiry(response.createdAt)
+            ) {
+              toast.error("Token has Expired! Please request for a new one !", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+              });
+              const  res = await forgotService.deleteToken(response.email);
+              if(res.success) {
+                setTimeout(() => (window.location.href = "/forgot"), 5000);
+              }
+            } else {
+              toast.success("Token Validated Successfully !!", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+              });
+              setEmail(response.email || "");
+            }
           } else {
             window.location.href = "/forgot";
           }
@@ -81,8 +108,8 @@ const ForgotPassword = () => {
     if (response.status === 200) {
       const data = { email };
       const res = await forgotService.sendResetEmail(data);
-      if (res.status === 200) {        
-        await res.message &&
+      if (res.status === 200) {
+        (await res.message) &&
           toast.success(res?.message || "success", {
             position: "top-center",
             autoClose: 5000,

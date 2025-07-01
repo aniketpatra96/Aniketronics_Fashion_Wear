@@ -21,9 +21,14 @@ class ForgotService {
     let response;
     try {
       response = await axios.get(`${this.api}/api/forgot?token=${token}`);
-      if(response.status === 200) {
-        return { status: 200, success: response?.data?.success, email: response.data.email };
-      }else{
+      if (response.status === 200) {
+        return {
+          status: 200,
+          success: response?.data?.success,
+          email: response.data.email,
+          createdAt: response.data.createdAt,
+        };
+      } else {
         return { status: 404, success: response?.data?.success };
       }
     } catch (error) {
@@ -35,10 +40,13 @@ class ForgotService {
     let response;
     try {
       response = await axios.put(`${this.api}/api/resetpassword`, data);
-      if(response.data.success) {
+      if (response.data.success) {
         return { status: 200, message: response?.data?.message };
-      }else{
-        return { status: 404, message: response?.data?.message || response?.data?.error };
+      } else {
+        return {
+          status: 404,
+          message: response?.data?.message || response?.data?.error,
+        };
       }
     } catch (error) {
       console.error(error);
@@ -49,9 +57,9 @@ class ForgotService {
     let response;
     try {
       response = await axios.delete(`${this.api}/api/forgot?email=${email}`);
-      if(response.status === 200) {
+      if (response.status === 200) {
         return { status: 200, success: response?.data?.success };
-      }else{
+      } else {
         return { status: 404, success: response?.data?.success };
       }
     } catch (error) {

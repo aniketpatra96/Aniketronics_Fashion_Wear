@@ -47,23 +47,25 @@ const Secret = () => {
               placeholder="Enter secret key"
               className="border border-gray-300 rounded-lg p-2 text-xl"
             />
-            <button
-              type="submit"
-              className="ml-2 text-xl text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded-lg"
-            >
-              Submit
-            </button>
-            <button
-              onClick={(e) => {
-                e.preventDefault();
-                setAuthenticated(false);
-                setInput("");
-                window.location.href = "/";
-              }}
-              className="ml-2 text-xl text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded-lg"
-            >
-              Back
-            </button>
+            <div className="flex justify-center mt-4 mr-2">
+              <button
+                type="submit"
+                className="ml-2 text-xl text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded-lg"
+              >
+                Submit
+              </button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  setAuthenticated(false);
+                  setInput("");
+                  window.location.href = "/";
+                }}
+                className="ml-2 text-xl text-white bg-pink-500 border-0 py-2 px-6 focus:outline-none hover:bg-pink-600 rounded-lg"
+              >
+                Back
+              </button>
+            </div>
           </form>
           {error !== null && (
             <p>

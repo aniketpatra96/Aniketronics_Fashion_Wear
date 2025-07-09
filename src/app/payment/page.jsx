@@ -88,9 +88,7 @@ const Payment = () => {
   const handlePayment = async (e) => {
     try {
       e.preventDefault();
-      const rawCardNumber = cardInputRef.current.value
-        .trim()
-        .replace(/\D/g, "");
+      const rawCardNumber = cardInputRef.current.value.trim().replace(/\D/g, "");
       if (!isValidCardNumber(rawCardNumber)) {
         toast.error("Invalid credit card number. Please check and try again.", {
           position: "top-center",

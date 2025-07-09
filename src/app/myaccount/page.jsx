@@ -189,13 +189,15 @@ const MyAccount = () => {
     }
   };
 
-  if (loading) return null;
+  if (loading && !user) {
+    return <p>Loading...</p>;
+  }
   if (!user) {
     return <p>Loading user info...</p>;
   }
   if(!account) {
     return <p>Loading account info...</p>;
-  }
+  } 
   return (
     user && (
       <section className="relative pt-40 pb-24">
@@ -350,7 +352,7 @@ const MyAccount = () => {
                         id="name"
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                         placeholder="Your Name"
-                        value={account.name}
+                        value={account.name || ""}
                         onChange={(e) =>
                           setAccount({
                             ...account,
@@ -372,7 +374,7 @@ const MyAccount = () => {
                         id="username"
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                         placeholder="Your username"
-                        value={user.username}
+                        value={user.username || ""}
                         onChange={(e) =>
                           setUser({
                             ...user,
@@ -394,7 +396,7 @@ const MyAccount = () => {
                         id="phone"
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                         placeholder="Your username"
-                        value={account.phone}
+                        value={account.phone || ""}
                         onChange={(e) =>
                           setAccount({
                             ...account,
@@ -416,7 +418,7 @@ const MyAccount = () => {
                         id="password"
                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                         placeholder="Your Password"
-                        value={password}
+                        value={password || ""}
                         onChange={(e) => setPassword(e.target.value)}
                       />
                     </div>
@@ -432,7 +434,7 @@ const MyAccount = () => {
                         rows="4"
                         className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500"
                         placeholder="your home address"
-                        value={account.homeAddress}
+                        value={account.homeAddress || ""}
                         onChange={(e) =>
                           setAccount({
                             ...account,
@@ -453,7 +455,7 @@ const MyAccount = () => {
                         rows="4"
                         className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-pink-500 focus:border-pink-500 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-pink-500 dark:focus:border-pink-500"
                         placeholder="Delivery address"
-                        value={account.deliveryAddress}
+                        value={account.deliveryAddress || ""}
                         onChange={(e) =>
                           setAccount({
                             ...account,
@@ -496,7 +498,7 @@ const MyAccount = () => {
               </span>
             </button>
           </div>
-          <div className="flex max-sm:flex-wrap max-sm:justify-center items-center gap-4">
+          {/* <div className="flex max-sm:flex-wrap max-sm:justify-center items-center gap-4">
             <a
               href="javascript:;"
               className="rounded-full py-3 px-6 bg-stone-100 text-gray-700 font-semibold text-sm leading-6 transition-all duration-500 hover:bg-stone-200 hover:text-gray-900"
@@ -515,7 +517,7 @@ const MyAccount = () => {
             >
               Project Manager
             </a>
-          </div>
+          </div> */}
         </div>
         <ToastContainer />
       </section>

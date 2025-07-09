@@ -25,20 +25,20 @@ export default function UserProvider(props) {
       }
     };
 
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       initializeAuth();
     }
   }, []);
 
   const login = (token) => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       localStorage.setItem("token", token);
     }
     setToken(token);
     setIsLoggedIn(true);
   };
   const logout = () => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       localStorage.removeItem("token");
     }
     setToken(null);
@@ -46,11 +46,21 @@ export default function UserProvider(props) {
   };
 
   return (
-    <UserContext.Provider value={{ token, isLoggedIn, login, logout, user, setUser }}>
+    <UserContext.Provider
+      value={{
+        token,
+        isLoggedIn,
+        login,
+        logout,
+        user,
+        setUser,
+        setIsLoggedIn,
+      }}
+    >
       {props.children}
     </UserContext.Provider>
   );
-};
+}
 
 export const useAuth = () => {
   const userContext = useContext(UserContext);

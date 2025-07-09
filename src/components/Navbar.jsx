@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useCart } from "@/contexts/CartContext";
-import { useRouter } from "next/navigation";
 import {
   AiFillCloseCircle,
   AiOutlineShoppingCart,
@@ -12,15 +11,16 @@ import {
 } from "react-icons/ai";
 import { BsFillBagCheckFill } from "react-icons/bs";
 import { IoTrashBinSharp } from "react-icons/io5";
-import { MdAccountCircle } from "react-icons/md";
 import { usePathname } from "next/navigation";
 import { useAuth } from "@/contexts/UserContext";
 import userService from "@/services/UserService";
+import { useSession, signOut } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session } = useSession();
   const { cart, addToCart, removeFromCart, clearCart, subTotal } = useCart();
   const ref = useRef();
-  const { isLoggedIn, logout, user, setUser } = useAuth();
+  const { isLoggedIn, logout, user, setUser, setIsLoggedIn } = useAuth();
   const toggleCart = () => {
     if (ref.current.classList.contains("translate-x-full")) {
       ref.current.classList.remove("translate-x-full");
@@ -36,18 +36,28 @@ const Navbar = () => {
     setDropdown(!dropdown);
   };
   useEffect(() => {
-    if(!user?._id) return;
-    (async () => {
+    if (!user?._id) return;
+    const handler = async () => {
       try {
         const response = await userService.getUser(user._id);
-        if(response.status === 200) {
+        if (response.status === 200) {
           setUser(response.user);
         }
       } catch (error) {
         console.error(error);
       }
-    })();
-  },[user?._id]);
+    };
+    handler();
+  }, [user?._id]);
+  useEffect(() => {
+    if (session) {
+      setUser({
+        email: session.user.email,
+        profilePicture: session.user.image,
+        username: session.user.name,
+      });
+    }
+  }, [session]);
   return (
     <div
       className={`flex flex-col md:flex-row md:justify-start justify-center items-center mb-1  shadow-md bg-white-200 top-0 ${
@@ -118,25 +128,54 @@ const Navbar = () => {
                   Orders
                 </li>
               </Link>
-              <li
-                onClick={() => {
-                  logout();
-                  setDropdown(false);
-                  window.location.href = "/";
-                }}
-                className="py-1 text-sm hover:text-pink-700"
-              >
-                Log Out
-              </li>
+              {session ? (
+                <li
+                  onClick={() => {
+                    setDropdown(false);
+                    signOut({ callbackUrl: "/" });
+                    setIsLoggedIn(false);
+                    setUser(null);
+                    localStorage.removeItem("token");
+                  }}
+                  className="py-1 text-sm hover:text-pink-700"
+                >
+                  Log Out
+                </li>
+              ) : (
+                <li
+                  onClick={() => {
+                    logout();
+                    setDropdown(false);
+                    window.location.href = "/";
+                  }}
+                  className="py-1 text-sm hover:text-pink-700"
+                >
+                  Log Out
+                </li>
+              )}
             </ul>
           </div>
         )}
         {!isLoggedIn ? (
-          <Link href={"/login"}>
-            <button className="bg-pink-600 px-2 py-1 rounded-md text-xl text-white mx-2 cursor-pointer">
-              Login
-            </button>
-          </Link>
+          session === undefined || session === null ? (
+            <Link href={"/login"}>
+              <button className="bg-pink-600 px-2 py-1 rounded-md text-xl text-white mx-2 cursor-pointer">
+                Login
+              </button>
+            </Link>
+          ) : (
+            <Image
+              onClick={toggleDropdown}
+              className="w-10 h-10 rounded-full mx-2"
+              src={
+                user?.profilePicture ||
+                "https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-social-media-user-image-182145777.jpg"
+              }
+              alt="Rounded avatar"
+              width={10}
+              height={10}
+            />
+          )
         ) : (
           <Image
             onClick={toggleDropdown}

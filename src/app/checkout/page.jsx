@@ -20,6 +20,27 @@ const Checkout = () => {
   const [address, setAddress] = useState("");
   const [pincode, setPincode] = useState("");
   const [validPincode, setValidPincode] = useState(false);
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || null;
+    if (Object.keys(cart).length === 0 || cart === null) {
+      if (typeof toast.error === "function") {
+        toast.error("Your cart is empty!", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Bounce,
+        });
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 2000);
+      }
+    }
+  }, [cart]);
   const checkServiceability = async (pin) => {
     if (pin.length !== 6) {
       if (typeof toast.error === "function") {
@@ -121,7 +142,7 @@ const Checkout = () => {
           }, 0);
         }
         return;
-      }else if(!validPincode) {
+      } else if (!validPincode) {
         if (typeof toast.error === "function") {
           setTimeout(() => {
             toast.error("Pincode is not Serviceable !", {
@@ -151,6 +172,45 @@ const Checkout = () => {
         subTotal,
       };
       localStorage.setItem("order", JSON.stringify(order));
+    }
+  };
+  const handlePinCode = async (e) => {
+    const pin = e.target.value;
+    setPincode(pin);
+    if (pin.length > 6) {
+      setPincode(pin.slice(0, 6));
+    } else if (pin.length > 5) {
+      const isValid = await checkServiceability(pin);
+      setValidPincode(isValid);
+      if (!isValid) {
+        if (typeof toast.error === "function") {
+          toast.error("Pincode is not Serviceable !", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+          });
+        }
+      } else {
+        if (typeof toast.error === "function") {
+          toast.success("Your Pincode is Serviceable !", {
+            position: "top-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+            transition: Bounce,
+          });
+        }
+      }
     }
   };
   return (
@@ -312,7 +372,7 @@ const Checkout = () => {
               name="pin"
               className="w-full bg-white rounded border border-gray-300 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
               placeholder="Your Zip/Pin Code"
-              onChange={(e) => setPincode(e.target.value)}
+              onChange={handlePinCode}
               value={pincode}
             />
           </div>
@@ -378,7 +438,7 @@ const Checkout = () => {
           <span className="mx-2">₹ {subTotal}</span>
         </span>
         <div className="flex items-center justify-center">
-          <Link href={validPincode ? "/payment" :"#"}>
+          <Link href={validPincode ? "/payment" : "#"}>
             <button
               disabled={Object.keys(cart).length === 0}
               className="flex mt-16 text-white bg-pink-500 border-0 py-2 px-8 focus:outline-none hover:bg-pink-600 rounded text-lg text-center"
